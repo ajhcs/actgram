@@ -1,0 +1,15 @@
+[package]
+name = "actgram-core"
+description = "Action grammar construction and static analysis"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+readme = "../../README.md"
+
+[lints]
+workspace = true
+
+[dev-dependencies]
+proptest.workspace = true

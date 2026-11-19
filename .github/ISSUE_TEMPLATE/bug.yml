@@ -1,0 +1,20 @@
+name: Bug report
+description: Report an incorrect result or behavior in Actgram.
+title: "[Bug] "
+body:
+  - type: markdown
+    attributes:
+      value: For a security issue, use the repository's private reporting form.
+  - type: textarea
+    id: behavior
+    attributes:
+      label: Expected and observed behavior
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction
+      description: Include the Actgram version, Rust version, grammar, strategy, seed, and a minimized trace if available.
+    validations:
+      required: true

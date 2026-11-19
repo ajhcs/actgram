@@ -1,0 +1,16 @@
+name: Feature request
+description: Describe a capability Actgram should support.
+body:
+  - type: textarea
+    id: use_case
+    attributes:
+      label: Use case
+      description: Describe the system and the action sequence you want to generate or verify.
+    validations:
+      required: true
+  - type: textarea
+    id: behavior
+    attributes:
+      label: Desired behavior
+    validations:
+      required: true

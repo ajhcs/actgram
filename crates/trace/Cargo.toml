@@ -1,0 +1,22 @@
+[package]
+name = "actgram-trace"
+description = "Replay, choice-tape shrinking and coverage for Actgram"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+readme = "../../README.md"
+
+[lints]
+workspace = true
+
+[dependencies]
+actgram-engine.workspace = true
+actgram-exec.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+sha2.workspace = true
+
+[dev-dependencies]
+actgram-core.workspace = true

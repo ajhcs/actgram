@@ -1,0 +1,29 @@
+[package]
+name = "actgram-cli"
+description = "Run, replay, shrink and inspect Actgram test scenarios"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+readme = "../../README.md"
+
+[lints]
+workspace = true
+
+[[bin]]
+name = "actgram"
+path = "src/main.rs"
+
+[dependencies]
+actgram-engine.workspace = true
+actgram-exec.workspace = true
+actgram-examples.workspace = true
+actgram-trace.workspace = true
+clap = { version = "4.6", features = ["derive"] }
+serde.workspace = true
+serde_json.workspace = true
+tempfile = "3"
+
+[features]
+seeded-bugs = ["actgram-examples/seeded-bugs"]

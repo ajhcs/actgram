@@ -1,0 +1,17 @@
+[package]
+name = "actgram-exec"
+description = "Virtual-time deterministic executor for action grammars"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+readme = "../../README.md"
+
+[lints]
+workspace = true
+
+[dependencies]
+actgram-core.workspace = true
+actgram-engine.workspace = true
+serde.workspace = true

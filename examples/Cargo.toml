@@ -1,0 +1,37 @@
+[package]
+name = "actgram-examples"
+description = "Reference systems and test scenarios for Actgram"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+readme = "../README.md"
+
+[lints]
+workspace = true
+
+[dependencies]
+actgram-core.workspace = true
+actgram-engine.workspace = true
+actgram-exec.workspace = true
+
+[dev-dependencies]
+actgram-macros.workspace = true
+actgram-trace.workspace = true
+
+[features]
+seeded-bugs = [
+    "bug-queue-overflow", "bug-queue-drain", "bug-queue-shrink", "bug-queue-grow", "bug-queue-clear",
+    "bug-wal-tail", "bug-wal-ghost", "bug-wal-tombstone", "bug-wal-stale", "bug-wal-checkpoint",
+]
+bug-queue-overflow = []
+bug-queue-drain = []
+bug-queue-shrink = []
+bug-queue-grow = []
+bug-queue-clear = []
+bug-wal-tail = []
+bug-wal-ghost = []
+bug-wal-tombstone = []
+bug-wal-stale = []
+bug-wal-checkpoint = []

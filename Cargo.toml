@@ -1,0 +1,29 @@
+[workspace]
+resolver = "2"
+members = ["crates/*", "examples", "xtask"]
+exclude = ["fuzz"]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.88"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/ajhcs/actgram"
+
+[workspace.dependencies]
+actgram-core = { path = "crates/core", version = "0.1.0" }
+actgram-engine = { path = "crates/engine", version = "0.1.0" }
+actgram-exec = { path = "crates/exec", version = "0.1.0" }
+actgram-trace = { path = "crates/trace", version = "0.1.0" }
+actgram-macros = { path = "crates/macros", version = "0.1.0" }
+actgram-examples = { path = "examples", version = "0.1.0" }
+rand_chacha = "=0.3.1"
+rand_core = "=0.6.4"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+sha2 = "0.10"
+proptest = { version = "=1.12.0", default-features = false, features = ["std"] }
+proptest-state-machine = "=0.9.0"
+
+[workspace.lints.rust]
+unsafe_code = "forbid"
