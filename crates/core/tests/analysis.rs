@@ -59,6 +59,18 @@ fn validation_identifies_the_exact_bad_definition() {
     );
 }
 
+#[test]
+fn analysis_lookup_handles_ids_outside_the_arena() {
+    let mut builder = Builder::new();
+    let root = builder.action("read");
+    let grammar = builder.build(root).unwrap();
+    let analysis = grammar.analysis();
+    let known = analysis.get(root).unwrap();
+    assert_eq!(known, &analysis[root]);
+    assert_eq!(known.minimum_actions(), Some(1));
+    assert_eq!(analysis.get(NodeId::from_index(100)), None);
+}
+
 type Words = BTreeSet<Vec<ActionId>>;
 
 fn concatenate(left: &Words, right: &Words) -> Words {

@@ -198,7 +198,10 @@ fn choice_tape_skips_forced_draws_and_adapts_only_in_edit_mode() {
     let mut strict = Choices::replay(&[7]);
     assert_eq!(strict.draw(one).unwrap(), 0);
     assert!(strict.observed().is_empty());
-    assert!(strict.draw(three).is_err());
+    assert_eq!(
+        strict.draw(three).unwrap_err().to_string(),
+        "choice tape entry 0 is 7 (expected below 3)"
+    );
     assert!(strict.observed().is_empty());
 
     let mut edited = Choices::edited(&[7]);
@@ -216,5 +219,8 @@ fn choice_tape_skips_forced_draws_and_adapts_only_in_edit_mode() {
             .map(|_| replay.draw(wide).unwrap())
             .collect::<Vec<_>>()
     );
-    assert!(replay.draw(wide).is_err());
+    assert_eq!(
+        replay.draw(wide).unwrap_err().to_string(),
+        format!("choice tape ends at entry 16 (expected a ticket below {wide})")
+    );
 }

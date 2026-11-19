@@ -33,6 +33,8 @@ conditional on a detection. An observation that fails and a reset both
 count as actions. Each shrinker is allowed 512 evaluations after its
 initial check. Driver errors fail generation of the report. The clean
 systems and every mutation's trigger are tested independently.
+An independent recognizer checks each generated and reduced Actgram run
+against the fixed workloads. Failing runs may end at a legal prefix.
 
 This measures targeting with a supplied goal under two fixed workloads.
 Common actions may take a short path that skips the required state. The

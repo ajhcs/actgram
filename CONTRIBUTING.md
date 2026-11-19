@@ -32,7 +32,7 @@ component on the pinned stable toolchain.
 ```sh
 cargo +nightly-2026-11-18 fuzz run builder -- -seed=17 -runs=10000 -max_len=320
 cargo llvm-cov --locked --workspace --all-features --fail-under-lines 80
-cargo mutants --file crates/core/src/analysis.rs --file crates/engine/src/tape.rs
+cargo mutants --file crates/core/src/analysis.rs --file crates/engine/src/tape.rs --test-workspace=true --timeout 10
 ```
 
 Run `cargo xtask evidence` to regenerate the report and its CSVs.
